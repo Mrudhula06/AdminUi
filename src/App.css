@@ -1,42 +1,139 @@
-#root {
-  max-width: 1280px;
+/* App.css */
+
+.app-container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.search-bar {
+  width: 400px;
+  padding: 10px 15px;
+  font-size: 16px;
+  margin: 0 auto 20px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.selected-row {
+  background-color: #e0f7fa;
+}
+
+button {
+  padding: 6px 12px;
+  margin: 0 2px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit {
+  background-color: #4caf50;
+  color: white;
+}
+
+.delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.save {
+  background-color: #2196f3;
+  color: white;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-selected {
+  background-color: #f44336;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+.pagination-controls button.active {
+  background-color: #2196f3;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .user-table th,
+  .user-table td {
+    padding: 8px 6px;
+    font-size: 0.85rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-bar {
+    width: 100%;
+    max-width: 100%;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .delete-selected {
+    width: 100%;
+  }
 }
